@@ -32,7 +32,7 @@ function passlist()
     };
 
     $.ajax({
-        URL: "https://api-ssl.bitly.com/v4/shorten",
+        url: "https://api-ssl.bitly.com/v4/shorten",
         cache: false,
         dataType: "json",
         method: "POST",
