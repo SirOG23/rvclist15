@@ -43,10 +43,10 @@ function passlist()
         data: JSON.stringify(params)
 	}).done(function(data) {
 		getshorturl = 1;
-		document.getElementById("sharelist").innerHTML = "The URL to share the list:<br /><span class=\"Red01\">" + data.link + "</span>";
+		document.getElementById("sharelist").innerHTML = "The URL to share the list:\n + data.link;
 		copyToClipboard(data.link);
 	}).fail(function(data) {
-		document.getElementById("sharelist").innerHTML = "The URL to share the list:<br /><span class=\"Red01\">" + url + "</span>";
+		document.getElementById("sharelist").innerHTML = "The URL to share the list:\n" + url;
 		copyToClipboard(URL);
 	});
 }
