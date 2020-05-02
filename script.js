@@ -40,19 +40,15 @@ function passlist()
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
         },
-        data: JSON.stringify(params)
-    }).done(function(data) {
-        //alert(data.link);
-         getshorturl = 1;
-         document.getElementById("sharelist").innerHTML = 'Share List:\n' + data.link;
-         copyToClipboard(data.link);
-    }).fail(function(data) {
-        //alert(data.link);
-      document.getElementById("sharelist").innerHTML = 'Share List:\n' + url;
-      //copyToClipboard("sharelist");
-      copyToClipboard(url);
-      //alert("ShoppingList URL Copied");
-    });
+        data: JSON.stringify(Params)
+	}).done(function(data) {
+		getshorturl = 1;
+		document.getElementById("ShareList").innerHTML = "The URL to share the list:<br /><span class=\"Red01\">" + data.link + "</span>";
+		CopyToClipBoard(data.link);
+	}).fail(function(data) {
+		document.getElementById("ShareList").innerHTML = "The URL to share the list:<br /><span class=\"Red01\">" + URL + "</span>";
+		CopyToClipBoard(URL);
+	});
 }
 //vFinal share function
 function share()
